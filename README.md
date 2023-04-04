@@ -16,4 +16,3 @@ se cambiaron el nombre de las clases para que cumpla con algunos de los requisit
 ademas de que ya no son nombres de dulces las clases si no nombres normales
 El anterior avance no tenia implementación en unity o c# solo estaba pensado
 
-file:///D:/compu/Descargas/Pruebas%20Unitarias.pdf 
