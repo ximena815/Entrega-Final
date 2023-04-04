@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private int poder = 5;
-    public int Poder { get => poder; }
+    public int Poder { get => poder; set => poder = value; }
 
     private TextMesh poderText;
     // Start is called before the first frame update

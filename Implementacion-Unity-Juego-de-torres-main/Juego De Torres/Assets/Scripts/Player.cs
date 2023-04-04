@@ -1,100 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using System;
+﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player
 {
-        
     private int vidas = 3;
-    [SerializeField]
+    public int Vidas { get => vidas; set => vidas = value; }
+
     private int poder = 5;
-    //public Text poderText;
-    public Text vidasText;
-    private TextMesh poderText;
+    public int Poder { get => poder; set => poder = value; }
 
-    public int Vidas { get => vidas; }
-
-    private static Player instance;
-    public static Player Instance { get => instance; }
-
-    public event Action EnemyDestroy;
-
-    private void Awake()
+    public bool DefeatEnemy(int poderEnemigo)
     {
-        if (instance == null)
+        if (poderEnemigo >= poder)
         {
-            instance = this;
+            vidas--;
+            return false;
         }
         else
         {
-            Destroy(gameObject);
+            poder += poderEnemigo;
+            return true;
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //poderText.text = Poder.ToString();
-       poderText= this.GetComponentInChildren<TextMesh>();
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        vidasText.text = "Vidas: " + vidas.ToString();
-        poderText.text = poder.ToString();
-        if (vidas <= 0)
-        {
-            gameObject.SetActive(false);
-        }
-    }
-    
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy")&& Draggable.isDragged== false)
-        {
-            int poderEnemigo = collision.gameObject.GetComponent<Enemy>().Poder;
-
-            if( poderEnemigo >= poder)
-            {
-                vidas--;
-                Draggable.isDragged = true;
-                Invoke("RestartPos", 2f);
-                
-                
-            }
-            else
-            {
-                poder += poderEnemigo;
-                collision.GetComponent<Enemy>().DestroyEnemy();
-                EnemyDestroy?.Invoke();
-            }
-           
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("AttackPoint"))
-        {
-            RestartPos();
-           
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Support"))
-        {
-            int valorSupp = collision.gameObject.GetComponent<Support>().Valor;
-            poder += valorSupp;
-            Destroy(collision.gameObject);
-        }
-    }
-    
-    
-    public void RestartPos()
-    {
-        this.GetComponent<Draggable>().RestartPosition();      
-    } 
 }
