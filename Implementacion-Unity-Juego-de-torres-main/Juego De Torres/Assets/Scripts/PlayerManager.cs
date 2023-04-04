@@ -66,16 +66,7 @@ public class PlayerManager : MonoBehaviour
             RestartPos();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Support"))
-        {
-            int valorSupp = collision.gameObject.GetComponent<Support>().Valor;
-            player.Poder += valorSupp;
-            Destroy(collision.gameObject);
-        }
-    }
-    
+  
     public void RestartPos()
     {
         GetComponent<Draggable>().RestartPosition();      
