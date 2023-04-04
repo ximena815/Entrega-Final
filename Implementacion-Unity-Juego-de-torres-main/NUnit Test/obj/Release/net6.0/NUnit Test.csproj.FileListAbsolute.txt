@@ -1,0 +1,5 @@
+C:\Users\osori\Documents\Unity Projects\Entrega-Final\Implementacion-Unity-Juego-de-torres-main\NUnit Test\obj\Release\net6.0\NUnit Test.csproj.AssemblyReference.cache
+C:\Users\osori\Documents\Unity Projects\Entrega-Final\Implementacion-Unity-Juego-de-torres-main\NUnit Test\obj\Release\net6.0\NUnit Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\osori\Documents\Unity Projects\Entrega-Final\Implementacion-Unity-Juego-de-torres-main\NUnit Test\obj\Release\net6.0\NUnit Test.AssemblyInfoInputs.cache
+C:\Users\osori\Documents\Unity Projects\Entrega-Final\Implementacion-Unity-Juego-de-torres-main\NUnit Test\obj\Release\net6.0\NUnit Test.AssemblyInfo.cs
+C:\Users\osori\Documents\Unity Projects\Entrega-Final\Implementacion-Unity-Juego-de-torres-main\NUnit Test\obj\Release\net6.0\NUnit Test.csproj.CoreCompileInputs.cache

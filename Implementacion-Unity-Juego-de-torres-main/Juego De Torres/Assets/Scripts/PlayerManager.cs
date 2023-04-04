@@ -6,6 +6,7 @@ using System;
 
 public class PlayerManager : MonoBehaviour
 {
+    // Este player se usa en las pruebas unitarias
     private Player player;
     public Player Player { get => player; }
 
@@ -44,10 +45,10 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy")&& Draggable.isDragged== false)
         {
-            int poderEnemigo = collision.gameObject.GetComponent<Enemy>().Poder;
+            int poderEnemigo = collision.gameObject.GetComponent<EnemyController>().Enemy.Poder;
             if (player.DefeatEnemy(poderEnemigo)) 
             {
-                collision.GetComponent<Enemy>().DestroyEnemy();
+                collision.GetComponent<EnemyController>().DestroyEnemy();
                 EnemyDestroy?.Invoke();
             }
             else
@@ -63,7 +64,6 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.CompareTag("AttackPoint"))
         {
             RestartPos();
-           
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -78,6 +78,6 @@ public class PlayerManager : MonoBehaviour
     
     public void RestartPos()
     {
-        this.GetComponent<Draggable>().RestartPosition();      
+        GetComponent<Draggable>().RestartPosition();      
     } 
 }
