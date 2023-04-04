@@ -14,12 +14,12 @@ public class GameOver : MonoBehaviour
     {
         gameOverUI.SetActive(false);
         gameWinUI.SetActive(false);
-        Player.Instance.EnemyDestroy += ReduceEnemyCount;
+        PlayerManager.Instance.EnemyDestroy += ReduceEnemyCount;
     }
 
     void Update()
     {
-        if (Player.Instance.Vidas <= 0 )
+        if (PlayerManager.Instance.Player.Vidas <= 0 )
         {
             gameOverUI.SetActive(true);
         }
@@ -34,6 +34,4 @@ public class GameOver : MonoBehaviour
     {
         EnemyCount--;
     }
-
-
 }
