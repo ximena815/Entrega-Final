@@ -17,7 +17,8 @@ public class PlayerManager : MonoBehaviour
 
     public Text vidasText;
     private TextMesh poderText;
-
+    public int playerpower;
+    public int playerlife;
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -33,12 +34,15 @@ public class PlayerManager : MonoBehaviour
    
     void Update()
     {
+        playerpower = player.Poder;
+        playerlife = player.Vidas;
         vidasText.text = "Vidas: " + player.Vidas.ToString();
         poderText.text = player.Poder.ToString();
         if (player.Vidas <= 0)
         {
             gameObject.SetActive(false);
         }
+
     }
     
     private void OnTriggerStay2D(Collider2D collision)
@@ -54,7 +58,7 @@ public class PlayerManager : MonoBehaviour
             else
             {
                 Draggable.isDragged = true;
-                Invoke("RestartPos", 2f);
+                RestartPos();
             }
 
         }
