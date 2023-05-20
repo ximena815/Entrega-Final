@@ -12,12 +12,12 @@ public class Player
     private int nivelTorre = 1;
     public int NivelTorre { get => nivelTorre; set => nivelTorre = value; }
 
-    public void GenerarPoder()
+    /*public void GenerarPoder()
     {
         System.Random random = new System.Random();
         poder = random.Next(5,20);
     }
-    
+    */
     public bool DefeatEnemy(int poderEnemigo)
     {
         if (poderEnemigo >= poder)

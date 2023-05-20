@@ -24,7 +24,7 @@ public class FloorController : MonoBehaviour
             Invoke("DestroyFloor", 2.1f);
         }
     }
-
+/*
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("AttackPoint"))
@@ -32,7 +32,7 @@ public class FloorController : MonoBehaviour
             this.transform.localPosition = collision.transform.localPosition;
         }
     }
-    
+    */
     private void DestroyFloor()
     {
 

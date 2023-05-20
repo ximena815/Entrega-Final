@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     {
         poderText.text = enemy.Poder.ToString();
     }
+    /*
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
             transform.localPosition = collision.transform.localPosition;
         }
     }
+    */ 
     public void DestroyEnemy()
     {
         Destroy(gameObject);

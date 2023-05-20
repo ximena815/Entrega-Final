@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour
             if (player.DefeatEnemy(poderEnemigo)) 
             {
                 collision.GetComponent<EnemyController>().DestroyEnemy();
-                EnemyDestroy?.Invoke();
+                //EnemyDestroy?.Invoke();
             }
             else
             {

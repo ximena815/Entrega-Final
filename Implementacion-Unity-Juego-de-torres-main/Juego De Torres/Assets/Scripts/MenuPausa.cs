@@ -45,7 +45,7 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameIsPaused = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        LoadNivel("Menu");
     }
 
     public void LoadNivel(string nivel)
@@ -55,7 +55,7 @@ public class MenuPausa : MonoBehaviour
 
     public void RestartLevel(string EsteNivel)
     {
-        SceneManager.LoadScene(EsteNivel);
+        LoadNivel(EsteNivel);
     }
 
 }
